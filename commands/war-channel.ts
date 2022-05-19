@@ -92,8 +92,7 @@ export default {
                     
                 let embed1 = new x.Embed()
                     .setTitle('Welcome to your war channel!')
-                    .setDescription(`This channel will be used to coordinate your war against ${data.nations.data[0].nation_name}\n
-                You may edit the channel to include the discord of allied nations.`)
+                    .setDescription(`This channel will be used to coordinate your war against ${data.nations.data[0].nation_name}\n\nYou may edit the channel to include the discord of allied nations.`)
 
                 let embed2 = new x.Embed()
                     .setTitle(`${data.nations.data[0].nation_name}`)

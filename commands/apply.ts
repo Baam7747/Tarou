@@ -45,8 +45,7 @@ export default {
 
                 let embed = new x.Embed()
                     .setTitle('Warning!')
-                    .setDescription(`Have you made sure that you can accept DMs from others in the server?
-                I'll be sending you a message after your application is submitted.`)
+                    .setDescription(`Have you made sure that you can accept DMs from others in the server?\nI'll be sending you a message after your application is submitted.`)
 
                 await msgInt.reply({
                     embeds: [embed],
@@ -152,8 +151,7 @@ export default {
 
                             msgInt.user.send(`Thanks for your application! Please wait up to 24 hours for a gov official to get to you. If you haven't already done so, please switch to the brown color bloc (unless you're on beige, then stay on it). Applicants to our training alliance must switch to Aqua instead.`)
                         });
-                    }
-                    else if (i.customId === 'no') {
+                    } else if (i.customId === 'no') {
                         let embed = new x.Embed()
                             .setTitle('Cancelled!')
                             .setDescription(`Change your settings first!`)

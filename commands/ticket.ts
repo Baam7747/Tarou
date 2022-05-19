@@ -72,8 +72,7 @@ export default {
 
             let embed1 = new x.Embed()
                 .setTitle('Welcome to your ticket!')
-                .setDescription(`We'll get to you as soon as possible! For now, please briefly explain what you need.
-                If you need a grant or loan, please use the proper format!`)
+                .setDescription(`We'll get to you as soon as possible! For now, please briefly explain what you need.\nIf you need a grant or loan, please use the proper format!`)
 
             interaction.reply({ embeds: [embed] })
             setTimeout(async () => await interaction.deleteReply(), 10000)
@@ -148,8 +147,7 @@ export default {
 
             let embed1 = new x.Embed()
                 .setTitle('Welcome to your ticket!')
-                .setDescription(`We'll get to you as soon as possible! For now, please briefly explain what you need.
-                If you need a grant or loan, please use the proper format!`)
+                .setDescription(`We'll get to you as soon as possible! For now, please briefly explain what you need.\nIf you need a grant or loan, please use the proper format!`)
 
             await interaction.reply({ embeds: [embed] })
             setTimeout(async () => await interaction.deleteReply(), 10000)
