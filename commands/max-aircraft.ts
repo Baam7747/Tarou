@@ -20,7 +20,7 @@ export default {
             { alliances (id: 5476, first: 50) 
                 { data 
                   { nations 
-                    { id, nation_name, num_cities, soldiers, tanks, aircraft, ships }}}}
+                    { id, nation_name, alliance_position, num_cities, soldiers, tanks, aircraft, ships }}}}
               `
 
             const data = await request(endpoint, query)
