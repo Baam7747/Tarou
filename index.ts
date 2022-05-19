@@ -30,7 +30,7 @@ client.on('ready', async () => {
         commandsDir: path.join(__dirname, 'commands'),
         typeScript: true,
         testServers: ['373295719907459072', '947311965397717013'],
-        botOwners: ['668189508507795488'],
+        botOwners: ['668189508507795488', '247974380305514496'],
         dbOptions,
         mongoUri: mongouri
     })
