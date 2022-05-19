@@ -2,6 +2,8 @@ import { ICommand } from "wokcommands";
 import DiscordJS from 'discord.js';
 import datastore from 'nedb';
 const userInfo = new datastore({ filename: 'userInfo.db' });
+const { baam } = require('../config.json')
+import { request, gql } from 'graphql-request'
 import * as x from '../exports';
 
 export default {
@@ -37,7 +39,7 @@ export default {
 
                 userInfo.loadDatabase((err) => {    // Callback is optional
 
-                    userInfo.find({ discordID: discordid }, (err: Error | null, docs: any[]) => {
+                    userInfo.find({ discordID: discordid }, async (err: Error | null, docs: any[]) => {
 
                         if (docs[0] === undefined) {
 
@@ -52,9 +54,36 @@ export default {
 
                         } else {
 
+                            const endpoint = `https://api.politicsandwar.com/graphql?api_key=${baam}`
+
+                            const query = gql`
+                            { nations (id: ${docs[0].nationID}, first: 50) 
+                            { data 
+                                { nation_name, leader_name, flag, alliance{name}, num_cities, score }}}
+                                `
+
+                            const data = await request(endpoint, query)
+
+                            function allianceNull(AAname: any) {
+                                if (AAname == null) {
+                                    return 'None'
+                                } else {
+                                    return data.nations.data[0].alliance.name
+                                }
+                            }
+
                             let embed = new x.Embed()
                                 .setTitle('Nation Found!')
-                                .setDescription(`This is <@${discordid}>'s nation! - https://politicsandwar.com/nation/id=${docs[0].nationID}\n\nVerified: ${(docs[0].verification.verified).toUpperCase()}`)
+                                .setDescription(`This is <@${discordid}>'s nation! - https://politicsandwar.com/nation/id=${docs[0].nationID}`)
+                                .setThumbnail(data.nations.data[0].flag)
+                                .addFields(
+                                    { name: 'Nation Name', value: `${data.nations.data[0].nation_name}`, inline: true },
+                                    { name: 'Leader', value: `${data.nations.data[0].leader_name}`, inline: true },
+                                    { name: 'Alliance', value: `${allianceNull(data.nations.data[0].alliance)}`, inline: true },
+                                    { name: 'Cities', value: `${data.nations.data[0].num_cities}`, inline: true },
+                                    { name: 'Score', value: `${data.nations.data[0].score}`, inline: true },
+                                    { name: 'Verified', value: (docs[0].verification.verified).toUpperCase(), inline: true },
+                                )
 
                             interaction.reply({
                                 embeds: [embed]
@@ -71,7 +100,7 @@ export default {
 
                 userInfo.loadDatabase((err) => { // Callback is optional
 
-                    userInfo.find({ nationID: nationid }, (err: Error | null, docs: any[]) => {
+                    userInfo.find({ nationID: nationid }, async (err: Error | null, docs: any[]) => {
 
                         if (docs[0] === undefined) {
 
@@ -86,9 +115,36 @@ export default {
 
                         } else {
 
+                            const endpoint = `https://api.politicsandwar.com/graphql?api_key=${baam}`
+
+                            const query = gql`
+                            { nations (id: ${docs[0].nationID}, first: 50) 
+                            { data 
+                                { nation_name, leader_name, flag, alliance{name}, num_cities, score }}}
+                                `
+
+                            const data = await request(endpoint, query)
+
+                            function allianceNull(AAname: any) {
+                                if (AAname == null) {
+                                    return 'None'
+                                } else {
+                                    return data.nations.data[0].alliance.name
+                                }
+                            }
+
                             let embed = new x.Embed()
                                 .setTitle('User Found!')
                                 .setDescription(`**${nationid}**: This nation ID belongs to <@${docs[0].discordID}>!\n\nVerified: ${(docs[0].verification.verified).toUpperCase()}`)
+                                .setThumbnail(data.nations.data[0].flag)
+                                .addFields(
+                                    { name: 'Nation Name', value: `${data.nations.data[0].nation_name}`, inline: true },
+                                    { name: 'Leader', value: `${data.nations.data[0].leader_name}`, inline: true },
+                                    { name: 'Alliance', value: `${allianceNull(data.nations.data[0].alliance)}`, inline: true },
+                                    { name: 'Cities', value: `${data.nations.data[0].num_cities}`, inline: true },
+                                    { name: 'Score', value: `${data.nations.data[0].score}`, inline: true },
+                                    { name: 'Verified', value: (docs[0].verification.verified).toUpperCase(), inline: true },
+                                )
 
                             interaction.reply({
                                 embeds: [embed]
