@@ -141,10 +141,7 @@ export default {
                                             { name: 'Munitions', value: `${thousands_separators(data.alliances.data[0].nations[i].munitions)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
                                             { name: 'Steel', value: `${thousands_separators(data.alliances.data[0].nations[i].steel)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1500)}`, inline: true },
                                             { name: 'Aluminum', value: `${thousands_separators(data.alliances.data[0].nations[i].aluminum)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
-                                            { name: 'Here\'s how much you still need to complete your warchest!',
-                                            value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}
-                                            Total cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n
-                                            If you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
+                                            { name: 'Here\'s how much you still need to complete your warchest!', value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}\nTotal cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n\nIf you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
                                         ])
 
                                     await interaction.reply({
@@ -196,10 +193,7 @@ export default {
                                             { name: 'Munitions', value: `${thousands_separators(data.alliances.data[0].nations[i].munitions)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
                                             { name: 'Steel', value: `${thousands_separators(data.alliances.data[0].nations[i].steel)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1500)}`, inline: true },
                                             { name: 'Aluminum', value: `${thousands_separators(data.alliances.data[0].nations[i].aluminum)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
-                                            { name: 'Here\'s how much you still need to complete your warchest!',
-                                            value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}
-                                            Total cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n
-                                            If you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
+                                            { name: 'Here\'s how much you still need to complete your warchest!', value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}\nTotal cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n\nIf you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
                                         ])
 
                                     await interaction.reply({
@@ -252,10 +246,7 @@ export default {
                                             { name: 'Munitions', value: `${thousands_separators(data.alliances.data[0].nations[i].munitions)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
                                             { name: 'Steel', value: `${thousands_separators(data.alliances.data[0].nations[i].steel)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1500)}`, inline: true },
                                             { name: 'Aluminum', value: `${thousands_separators(data.alliances.data[0].nations[i].aluminum)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
-                                            { name: 'Here\'s how much you still need to complete your warchest!',
-                                            value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}
-                                            Total cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n
-                                            If you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
+                                            { name: 'Here\'s how much you still need to complete your warchest!', value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}\nTotal cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n\nIf you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
                                         ])
 
                                     await interaction.reply({
@@ -354,10 +345,7 @@ export default {
                                             { name: 'Munitions', value: `${thousands_separators(data.alliances.data[0].nations[i].munitions)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
                                             { name: 'Steel', value: `${thousands_separators(data.alliances.data[0].nations[i].steel)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1500)}`, inline: true },
                                             { name: 'Aluminum', value: `${thousands_separators(data.alliances.data[0].nations[i].aluminum)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
-                                            { name: 'Here\'s how much you still need to complete your warchest!',
-                                            value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}
-                                            Total cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n
-                                            If you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
+                                            { name: 'Here\'s how much you still need to complete your warchest!', value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}\nTotal cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n\nIf you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
                                         ])
 
                                     await interaction.reply({
@@ -409,10 +397,7 @@ export default {
                                             { name: 'Munitions', value: `${thousands_separators(data.alliances.data[0].nations[i].munitions)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
                                             { name: 'Steel', value: `${thousands_separators(data.alliances.data[0].nations[i].steel)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1500)}`, inline: true },
                                             { name: 'Aluminum', value: `${thousands_separators(data.alliances.data[0].nations[i].aluminum)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
-                                            { name: 'Here\'s how much you still need to complete your warchest!',
-                                            value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}
-                                            Total cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n
-                                            If you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
+                                            { name: 'Here\'s how much you still need to complete your warchest!', value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}\nTotal cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n\nIf you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
                                         ])
 
                                     await interaction.reply({
@@ -465,10 +450,7 @@ export default {
                                             { name: 'Munitions', value: `${thousands_separators(data.alliances.data[0].nations[i].munitions)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
                                             { name: 'Steel', value: `${thousands_separators(data.alliances.data[0].nations[i].steel)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1500)}`, inline: true },
                                             { name: 'Aluminum', value: `${thousands_separators(data.alliances.data[0].nations[i].aluminum)} / ${thousands_separators(data.alliances.data[0].nations[i].num_cities * 1000)}`, inline: true },
-                                            { name: 'Here\'s how much you still need to complete your warchest!',
-                                            value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}
-                                            Total cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n
-                                            If you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
+                                            { name: 'Here\'s how much you still need to complete your warchest!', value: `${gasoline_to_buy}\n${munitions_to_buy}\n${steel_to_buy}\n${aluminum_to_buy}\nTotal cost: $${thousands_separators(steel_on_hand + munitions_on_hand + gasoline_on_hand + aluminum_on_hand)}\n\nIf you don't need anymore resources, then you're good to go! <:remwink:815316249168576594>` }
                                         ])
 
                                     await interaction.reply({
