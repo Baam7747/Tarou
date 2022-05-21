@@ -48,7 +48,7 @@ export default {
 
                     } else {
 
-                        const money1 = docs[0].deposits.cash
+                        const money1 = docs[0].deposits.money
                         const food1 = docs[0].deposits.food
                         const coal1 = docs[0].deposits.coal
                         const oil1 = docs[0].deposits.oil
