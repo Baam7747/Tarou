@@ -293,7 +293,11 @@ export default {
                         const data = await request(endpoint, query)
                         const allianceID = data.nations.data[0].alliance_id
 
-                        if (allianceID !== "5476" || "8594" || "7803") {
+                        console.log(allianceID)
+
+                        if (allianceID !== ("5476" || "8594" || "7803")) {
+
+                            console.log(allianceID)
                             let embed = new x.Embed()
                                 .setTitle('Error!')
                                 .setDescription("You're not a member of Weebunism!")
