@@ -7,7 +7,7 @@ class Embed extends DiscordJS.MessageEmbed {
         this.setTimestamp()
         this.setColor('#0099ff')
         this.setFooter({
-            text: 'LaffeyAI',
+            text: 'TEST-BOT',
             iconURL: `${client.user!.avatarURL()}`
         })
     }
