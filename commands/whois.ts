@@ -135,7 +135,7 @@ export default {
 
                             let embed = new x.Embed()
                                 .setTitle('User Found!')
-                                .setDescription(`**${nationid}**: This nation ID belongs to <@${docs[0].discordID}>!\n\nVerified: ${(docs[0].verification.verified).toUpperCase()}`)
+                                .setDescription(`**${nationid}**: This nation ID belongs to <@${docs[0].discordID}>!`)
                                 .setThumbnail(data.nations.data[0].flag)
                                 .addFields(
                                     { name: 'Nation Name', value: `${data.nations.data[0].nation_name}`, inline: true },

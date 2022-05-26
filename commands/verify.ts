@@ -148,7 +148,7 @@ export default {
 
                                     let embed = new x.Embed()
                                         .setTitle('Verification Started!')
-                                        .setDescription("Please check your in-game inbox for the validation code!\nOnce you've recieved it, please run this command again, but with the `code` option\nThen, proceed to enter the verification code you recieved")
+                                        .setDescription("Please check your in-game inbox for the validation code!\nOnce you've received it, please run this command again, but with the `code` option\nThen, proceed to enter the verification code you received")
 
                                     userInfo.insert([information], (err: Error | null, newdocs: any[]) => { });
 

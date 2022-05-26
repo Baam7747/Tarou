@@ -17,7 +17,7 @@ export default {
     slash: true,
     testOnly: true,
     minArgs: 1,
-    maxArgs: 2,
+    maxArgs: 13,
     expectedArgs: '<nation_link> && <resources>',
     options: [
         {
@@ -369,21 +369,30 @@ export default {
                                             { multi: false },
                                             (err: Error | null, numReplaced: number) => { });
 
+                                        let embed = new x.Embed()
+                                            .setDescription(`Your withdrawal request has been approved by <@${i.user.id}>!`)
+
                                         await msgInt.editReply({
-                                            content: `<@${discordID}> Your withdrawal request has been approved by <@${i.user.id}>!`,
+                                            content: `<@${discordID}>`,
+                                            embeds: [embed],
                                             components: []
                                         })
                                         return
 
                                     } else if (i.customId === 'no_send') {
+
+                                        let embed = new x.Embed()
+                                            .setDescription(`Your withdrawal request has been rejected. Please contact econ for further explaination.`)
+
                                         await msgInt.editReply({
-                                            content: `<@${discordID}> Your withdrawal request has been rejected. Please contact econ for further explaination`,
+                                            content: `<@${discordID}>`,
+                                            embeds: [embed],
                                             components: []
                                         })
                                         return
                                     }
                                 } else {
-                                    i.reply({ content: `These buttons aren't for you!`, ephemeral: true });
+                                    i.reply({ content: `Insufficient permissions to use these buttons!`, ephemeral: true });
                                     return
                                 }
                             });

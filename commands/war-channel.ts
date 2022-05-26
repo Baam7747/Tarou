@@ -48,7 +48,7 @@ export default {
             } else {
 
                 const madeChannel: any = await interaction.guild!.channels.create(`war_channel-${nationid}`, {
-                    parent: '846452070822707230',
+                    parent: '919319663735865424',
                     permissionOverwrites: [
                         {
                             id: interaction.user.id,
