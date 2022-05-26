@@ -8,9 +8,9 @@ export default {
 
     slash: true,
     testOnly: true,
-    minArgs: 1,
-    maxArgs: 1,
-    expectedArgs: '<discord user>',
+    minArgs: 2,
+    maxArgs: 2,
+    expectedArgs: '<add || remove> && <discord user>',
     options: [
         {
             name: 'add_or_remove',
@@ -43,13 +43,13 @@ export default {
 
             channel.permissionOverwrites.edit(member!, 
                 { 
-                    READ_MESSAGE_HISTORY: false,
-                    ADD_REACTIONS: false,
-                    SEND_MESSAGES: false,
-                    SEND_MESSAGES_IN_THREADS: false,
-                    VIEW_CHANNEL: false,
-                    USE_EXTERNAL_EMOJIS: false,
-                    USE_APPLICATION_COMMANDS: false,
+                    READ_MESSAGE_HISTORY: true,
+                    ADD_REACTIONS: true,
+                    SEND_MESSAGES: true,
+                    SEND_MESSAGES_IN_THREADS: true,
+                    VIEW_CHANNEL: true,
+                    USE_EXTERNAL_EMOJIS: true,
+                    USE_APPLICATION_COMMANDS: true,
                 });
 
             let embed = new x.Embed()
