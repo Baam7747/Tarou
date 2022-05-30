@@ -14,6 +14,8 @@ export default {
     callback: async ({ interaction }) => {
         if (interaction) {
 
+            interaction.reply('Checking members...')
+
             const endpoint = `https://api.politicsandwar.com/graphql?api_key=${empiur}`
 
             const query = gql`
@@ -41,7 +43,7 @@ export default {
                                 return
                             } else {
                                 let discordID = docs[0].discordID
-                                interaction.reply(`<@${discordID}>, you're running a bit low on food!`)
+                                interaction.channel!.send(`<@${discordID}>, you're running a bit low on food!`)
                             }
                         })
                     } else if (((data.alliances.data[0].nations[i].uranium) <= (data.alliances.data[0].nations[i].num_cities * 5)) && appStatus !== 'APPLICANT') {
@@ -52,7 +54,7 @@ export default {
                                 return
                             } else {
                                 let discordID = docs[0].discordID
-                                interaction.reply(`<@${discordID}>, you're running a bit low on uranium!`)
+                                interaction.channel!.send(`<@${discordID}>, you're running a bit low on uranium!`)
                             }
                         })
                     } else if ((data.alliances.data[0].nations[i].color !== 'brown') && appStatus !== 'APPLICANT') {
@@ -65,7 +67,7 @@ export default {
                                     return
                                 } else {
                                     let discordID = docs[0].discordID
-                                    interaction.reply(`<@${discordID}>, please switch to brown!`)
+                                    interaction.channel!.send(`<@${discordID}>, please switch to brown!`)
                                 }
                             })
                         }
