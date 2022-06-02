@@ -14,7 +14,6 @@ export default {
     description: 'Calculating the total deposits that members have in the bank!',
 
     slash: true,
-    testOnly: true,
 
     callback: ({ interaction }) => {
         if (interaction) {

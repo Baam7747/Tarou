@@ -14,7 +14,6 @@ export default {
     description: 'Calculating the total debt that members owe to the alliance!',
 
     slash: true,
-    testOnly: true,
 
     callback: ({ interaction }) => {
         if (interaction) {

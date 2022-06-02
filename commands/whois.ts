@@ -11,7 +11,6 @@ export default {
     description: `Finding someone's nation/discord!`,
 
     slash: true,
-    testOnly: true,
     minArgs: 1,
     maxArgs: 1,
     expectedArgs: '<nation_ID> || <discord_user>',

@@ -18,7 +18,6 @@ export default {
     ],
 
     slash: true,
-    testOnly: true,
 
     callback: async ({ interaction }) => {
         if (interaction) {

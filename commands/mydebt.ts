@@ -15,7 +15,6 @@ export default {
     description: `Showing someone's debt to the alliance!`,
 
     slash: true,
-    testOnly: true,
     options: [
         {
             name: 'discord_user',

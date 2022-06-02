@@ -15,7 +15,6 @@ export default {
     description: `Command used by econ gov to log someone's deposit!`,
 
     slash: true,
-    testOnly: true,
     minArgs: 2,
     expectedArgs: '<discord_user> && <resource>',
     options: [
@@ -125,7 +124,7 @@ export default {
 
                         let embed = new x.Embed()
                             .setTitle('Error!')
-                            .setDescription(`You're not verified! Please make sure to verify before running this command!`)
+                            .setDescription(`The user you mentioned has not verified yet!`)
 
                         interaction.reply({
                             embeds: [embed]

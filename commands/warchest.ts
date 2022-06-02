@@ -28,7 +28,6 @@ export default {
     description: `Viewing someone's war chest!`,
 
     slash: true,
-    testOnly: true,
     options: [
         {
             name: 'discord_user',

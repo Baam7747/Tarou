@@ -17,7 +17,6 @@ export default {
     description: `Finding a nation's militarization level!`,
 
     slash: true,
-    testOnly: true,
     minArgs: 1,
     maxArgs: 1,
     expectedArgs: '<discord_user> || <nation_id>',

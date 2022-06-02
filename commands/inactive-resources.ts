@@ -9,7 +9,6 @@ export default {
     description: `Pinging everyone who's running low on resources or not on the correct color bloc!`,
 
     slash: true,
-    testOnly: true,
 
     callback: async ({ interaction }) => {
         if (interaction) {

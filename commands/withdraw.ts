@@ -18,7 +18,7 @@ export default {
     testOnly: true,
     minArgs: 1,
     maxArgs: 13,
-    expectedArgs: '<nation_link> && <resources>',
+    expectedArgs: '<nation_link> && <resources> || <cancel>',
     options: [
         {
             name: 'nation_name',
@@ -380,6 +380,15 @@ export default {
                                         return
 
                                     } else if (i.customId === 'no_send') {
+
+                                        userInfo.update({ discordID: discordID },
+                                            {
+                                                $set: {
+                                                    withdraw_status: 'allow',
+                                                }
+                                            },
+                                            { multi: false },
+                                            (err: Error | null, numReplaced: number) => { });
 
                                         let embed = new x.Embed()
                                             .setDescription(`Your withdrawal request has been rejected. Please contact econ for further explaination.`)

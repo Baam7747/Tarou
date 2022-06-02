@@ -15,7 +15,6 @@ export default {
     description: `Command used by econ gov to record someone's debt!`,
 
     slash: true,
-    testOnly: true,
     minArgs: 2,
     expectedArgs: '<discord_user> && <money>',
     options: [

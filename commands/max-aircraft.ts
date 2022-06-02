@@ -9,7 +9,6 @@ export default {
     description: `Pinging everyone who doesn't have maxed aircraft!`,
 
     slash: true,
-    testOnly: true,
 
     callback: async ({ interaction }) => {
         if (interaction) {
