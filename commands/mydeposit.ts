@@ -29,7 +29,7 @@ export default {
         const member = guild!.members.cache.get(interaction.user.id)
 
         userInfo.loadDatabase((err) => { // Callback is optional
-            if (member!.roles.cache.has('857486135717658634') && (interaction.options.getUser('discord_user'))) {
+            if (member!.roles.cache.has('981954644865581106') && (interaction.options.getUser('discord_user'))) {
 
                 let discordid = String(interaction.options.getUser('discord_user')?.id)
 
@@ -84,7 +84,7 @@ export default {
                     }
                 })
                 return
-            } else if (!member!.roles.cache.has('857486135717658634') && (interaction.options.getUser('discord_user'))) {
+            } else if (!member!.roles.cache.has('981954644865581106') && (interaction.options.getUser('discord_user'))) {
                 interaction.reply(`Insufficient permissions to see the deposits of others! <:laffno:815323381464432671>\nIf you want to see your own deposits, you can run the command without mentioning anyone.`)
                 return
             } else if (!interaction.options.getUser('discord_user')) {

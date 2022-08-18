@@ -1,57 +1,57 @@
-import { ICommand } from "wokcommands";
-import { request, gql } from 'graphql-request'
-import datastore from 'nedb';
-const userInfo = new datastore({ filename: 'userInfo.db' });
-const { empiur } = require('../config.json')
+// import { ICommand } from "wokcommands";
+// import { request, gql } from 'graphql-request'
+// import datastore from 'nedb';
+// const userInfo = new datastore({ filename: 'userInfo.db' });
+// const { empiur } = require('../config.json')
 
-export default {
-    category: 'Utility',
-    description: `Pinging everyone who doesn't have maxed aircraft!`,
+// export default {
+//     category: 'Utility',
+//     description: `Pinging everyone who doesn't have maxed aircraft!`,
 
-    slash: true,
+//     slash: true,
 
-    callback: async ({ interaction }) => {
-        if (interaction) {
+//     callback: async ({ interaction }) => {
+//         if (interaction) {
 
-            const endpoint = `https://api.politicsandwar.com/graphql?api_key=${empiur}`
+//             const endpoint = `https://api.politicsandwar.com/graphql?api_key=${empiur}`
 
-            const query = gql`
-            { alliances (id: 5476, first: 50) 
-                { data 
-                  { nations 
-                    { id, nation_name, alliance_position, num_cities, soldiers, tanks, aircraft, ships }}}}
-              `
+//             const query = gql`
+//             { alliances (id: 5476, first: 50) 
+//                 { data 
+//                   { nations 
+//                     { id, nation_name, alliance_position, num_cities, soldiers, tanks, aircraft, ships }}}}
+//               `
 
-            const data = await request(endpoint, query)
+//             const data = await request(endpoint, query)
 
-            userInfo.loadDatabase(async (err) => {    // Callback is optional
+//             userInfo.loadDatabase(async (err) => {    // Callback is optional
 
-                interaction.reply(`The following people do not have maxed aicraft!`)
+//                 interaction.reply(`The following people do not have maxed aicraft!`)
 
-                for (let i = 0; i < data.alliances.data[0].nations.length; i++) {
+//                 for (let i = 0; i < data.alliances.data[0].nations.length; i++) {
 
-                    let aircraftCount = data.alliances.data[0].nations[i].aircraft
-                    let aircraftFull = data.alliances.data[0].nations[i].num_cities * 75
+//                     let aircraftCount = data.alliances.data[0].nations[i].aircraft
+//                     let aircraftFull = data.alliances.data[0].nations[i].num_cities * 75
 
-                    if ((aircraftCount !== aircraftFull) && data.alliances.data[0].nations[i].alliance_position !== 'APPLICANT') {
+//                     if ((aircraftCount !== aircraftFull) && data.alliances.data[0].nations[i].alliance_position !== 'APPLICANT') {
 
-                        const nationID = parseInt(data.alliances.data[0].nations[i].id)
+//                         const nationID = parseInt(data.alliances.data[0].nations[i].id)
 
-                        userInfo.find({ nationID: nationID }, async (err: Error | null, docs: any[]) => {
+//                         userInfo.find({ nationID: nationID }, async (err: Error | null, docs: any[]) => {
 
-                            if (docs[0] == undefined) {
-                                return
+//                             if (docs[0] == undefined) {
+//                                 return
                                 
-                            } else {
+//                             } else {
 
-                                let discordID = docs[0].discordID
-                                interaction.channel?.send(`<@${discordID}> -- **${aircraftCount}** out of a possible **${aircraftFull}**`)
+//                                 let discordID = docs[0].discordID
+//                                 interaction.channel?.send(`<@${discordID}> -- **${aircraftCount}** out of a possible **${aircraftFull}**`)
 
-                            }
-                        })
-                    }
-                }
-            })
-        }
-    },
-} as ICommand
+//                             }
+//                         })
+//                     }
+//                 }
+//             })
+//         }
+//     },
+// } as ICommand

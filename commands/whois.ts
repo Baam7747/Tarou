@@ -63,31 +63,44 @@ export default {
 
                             const data = await request(endpoint, query)
 
-                            function allianceNull(AAname: any) {
-                                if (AAname == null) {
-                                    return 'None'
-                                } else {
-                                    return data.nations.data[0].alliance.name
+                            if (data.nations.data[0] == null) {
+
+                                let embed = new x.Embed()
+                                    .setTitle('Hmm...')
+                                    .setDescription(`This is <@${discordid}>'s nation! - https://politicsandwar.com/nation/id=${docs[0].nationID}\n... but the nation doesn't exist anymore <:pikaThink:993341599146848307>`)
+                                    .setThumbnail("https://live.staticflickr.com/65535/52191970736_6858c2eccc_o.png")
+
+                                interaction.reply({
+                                    embeds: [embed]
+                                })
+                            } else {
+
+                                function allianceNull(AAname: any) {
+                                    if (AAname == null) {
+                                        return 'None'
+                                    } else {
+                                        return data.nations.data[0].alliance.name
+                                    }
                                 }
+
+                                let embed = new x.Embed()
+                                    .setTitle('Nation Found!')
+                                    .setDescription(`This is <@${discordid}>'s nation! - https://politicsandwar.com/nation/id=${docs[0].nationID}`)
+                                    .setThumbnail(data.nations.data[0].flag)
+                                    .addFields(
+                                        { name: 'Nation Name', value: `${data.nations.data[0].nation_name}`, inline: true },
+                                        { name: 'Leader', value: `${data.nations.data[0].leader_name}`, inline: true },
+                                        { name: 'Alliance', value: `${allianceNull(data.nations.data[0].alliance)}`, inline: true },
+                                        { name: 'Cities', value: `${data.nations.data[0].num_cities}`, inline: true },
+                                        { name: 'Score', value: `${data.nations.data[0].score}`, inline: true },
+                                        { name: 'Verified', value: (docs[0].verification.verified).toUpperCase(), inline: true },
+                                    )
+
+                                interaction.reply({
+                                    embeds: [embed]
+                                })
+
                             }
-
-                            let embed = new x.Embed()
-                                .setTitle('Nation Found!')
-                                .setDescription(`This is <@${discordid}>'s nation! - https://politicsandwar.com/nation/id=${docs[0].nationID}`)
-                                .setThumbnail(data.nations.data[0].flag)
-                                .addFields(
-                                    { name: 'Nation Name', value: `${data.nations.data[0].nation_name}`, inline: true },
-                                    { name: 'Leader', value: `${data.nations.data[0].leader_name}`, inline: true },
-                                    { name: 'Alliance', value: `${allianceNull(data.nations.data[0].alliance)}`, inline: true },
-                                    { name: 'Cities', value: `${data.nations.data[0].num_cities}`, inline: true },
-                                    { name: 'Score', value: `${data.nations.data[0].score}`, inline: true },
-                                    { name: 'Verified', value: (docs[0].verification.verified).toUpperCase(), inline: true },
-                                )
-
-                            interaction.reply({
-                                embeds: [embed]
-                            })
-
                         }
 
                     });
@@ -124,30 +137,43 @@ export default {
 
                             const data = await request(endpoint, query)
 
-                            function allianceNull(AAname: any) {
-                                if (AAname == null) {
-                                    return 'None'
-                                } else {
-                                    return data.nations.data[0].alliance.name
+                            if (data.nations.data[0] == null) {
+
+                                let embed = new x.Embed()
+                                    .setTitle('Hmm...')
+                                    .setDescription(`**${nationid}**: This nation ID belongs to <@${docs[0].discordID}>... but the nation doesn't exist anymore <:pikaThink:993341599146848307>`)
+                                    .setThumbnail("https://live.staticflickr.com/65535/52191970736_6858c2eccc_o.png")
+
+                                interaction.reply({
+                                    embeds: [embed]
+                                })
+                            } else {
+
+                                function allianceNull(AAname: any) {
+                                    if (AAname == null) {
+                                        return 'None'
+                                    } else {
+                                        return data.nations.data[0].alliance.name
+                                    }
                                 }
+
+                                let embed = new x.Embed()
+                                    .setTitle('User Found!')
+                                    .setDescription(`**${nationid}**: This nation ID belongs to <@${docs[0].discordID}>!`)
+                                    .setThumbnail(data.nations.data[0].flag)
+                                    .addFields(
+                                        { name: 'Nation Name', value: `${data.nations.data[0].nation_name}`, inline: true },
+                                        { name: 'Leader', value: `${data.nations.data[0].leader_name}`, inline: true },
+                                        { name: 'Alliance', value: `${allianceNull(data.nations.data[0].alliance)}`, inline: true },
+                                        { name: 'Cities', value: `${data.nations.data[0].num_cities}`, inline: true },
+                                        { name: 'Score', value: `${data.nations.data[0].score}`, inline: true },
+                                        { name: 'Verified', value: (docs[0].verification.verified).toUpperCase(), inline: true },
+                                    )
+
+                                interaction.reply({
+                                    embeds: [embed]
+                                })
                             }
-
-                            let embed = new x.Embed()
-                                .setTitle('User Found!')
-                                .setDescription(`**${nationid}**: This nation ID belongs to <@${docs[0].discordID}>!`)
-                                .setThumbnail(data.nations.data[0].flag)
-                                .addFields(
-                                    { name: 'Nation Name', value: `${data.nations.data[0].nation_name}`, inline: true },
-                                    { name: 'Leader', value: `${data.nations.data[0].leader_name}`, inline: true },
-                                    { name: 'Alliance', value: `${allianceNull(data.nations.data[0].alliance)}`, inline: true },
-                                    { name: 'Cities', value: `${data.nations.data[0].num_cities}`, inline: true },
-                                    { name: 'Score', value: `${data.nations.data[0].score}`, inline: true },
-                                    { name: 'Verified', value: (docs[0].verification.verified).toUpperCase(), inline: true },
-                                )
-
-                            interaction.reply({
-                                embeds: [embed]
-                            })
                         }
 
                     });

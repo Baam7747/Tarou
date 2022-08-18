@@ -200,8 +200,8 @@ export default {
                             userInfo.update({ discordID: discordID }, { $set: { verification: { code: verificationCode, verified: "true" } } }, { multi: false }, (err: Error | null, numReplaced: number) => { });
 
                             await guild!.roles.fetch()
-                            let role = guild!.roles.cache.get('799721062207848449')!
                             let member = guild!.members.cache.get(interaction.user.id)
+                            let role = member!.guild.roles.cache.find(role => role.name == "PnW-Verified")!;
                             member!.roles.add(role)
                             console.log(`Role added to ${interaction.user.id}`)
 

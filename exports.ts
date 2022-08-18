@@ -5,9 +5,9 @@ class Embed extends DiscordJS.MessageEmbed {
     constructor(options?: DiscordJS.MessageEmbedOptions) {
         super(options);
         this.setTimestamp()
-        this.setColor('#0099ff')
+        this.setColor('#f2ae72')
         this.setFooter({
-            text: 'TEST-BOT',
+            text: 'Tarou',
             iconURL: `${client.user!.avatarURL()}`
         })
     }

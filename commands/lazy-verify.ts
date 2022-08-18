@@ -134,7 +134,7 @@ export default {
                                     userInfo.insert([information], (err: Error | null, newdocs: any[]) => { });
 
                                     await guild!.roles.fetch()
-                                    let role = guild!.roles.cache.get('799721062207848449')!
+                                    let role = guild!.roles.cache.get('983477300362371102')!
                                     let member = guild!.members.cache.get(interaction.user.id)
                                     member!.roles.add(role)
                                     console.log(`Role added to ${interaction.user.id}`)

@@ -2,7 +2,7 @@ import { ICommand } from "wokcommands";
 import { request, gql } from 'graphql-request'
 import datastore from 'nedb';
 const userInfo = new datastore({ filename: 'userInfo.db' });
-const { empiur } = require('../config.json')
+const { slywolf } = require('../config.json')
 
 export default {
     category: 'Utility',
@@ -15,10 +15,10 @@ export default {
 
             interaction.reply('Checking members...')
 
-            const endpoint = `https://api.politicsandwar.com/graphql?api_key=${empiur}`
+            const endpoint = `https://api.politicsandwar.com/graphql?api_key=${slywolf}`
 
             const query = gql`
-            { alliances (id: 5476, first: 50) 
+            { alliances (id: 10060, first: 50) 
                 { data 
                   { nations 
                     { id, nation_name, alliance_position, num_cities, food, uranium, color }}}}
